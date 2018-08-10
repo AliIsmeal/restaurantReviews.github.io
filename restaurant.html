@@ -2,74 +2,74 @@
 <html lang="en">
 
 <head>
-    <!-- Normalize.css for better cross-browser consistency -->
-    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-    <!-- Main CSS file -->
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Info</title>
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="css/Responsive.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Info</title>
 </head>
 
 <body class="inside">
-    <!-- Beginning header -->
-    <header>
-        <!-- Beginning nav -->
-        <nav>
-            <h1><a href="/" tabindex="-1">Restaurant Reviews</a></h1>
-        </nav>
-        <!-- Beginning breadcrumb -->
-        <ul id="breadcrumb" aria-label="Breadcrumb">
-            <li><a href="/">Home</a></li>
-        </ul>
-        <!-- End breadcrumb -->
-        <!-- End nav -->
-    </header>
-    <!-- End header -->
-    <!-- Beginning main -->
-    <main id="maincontent">
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav>
+      <h1><a href="/" tabindex="1">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <ul id="breadcrumb" aria-label="Breadcrumb">
+      <li><a href="/">Home</a></li>
+    </ul>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+  <!-- Beginning main -->
+  <main id="maincontent">
 
-        <!-- Beginning restaurant -->
-        <section id="restaurant-container">
-            <h1 id="restaurant-name"></h1>
-            <img id="restaurant-img" alt="Image of restaurant">
-            <p id="restaurant-cuisine" aria-label="Cuisine of the restaurant"></p>
-            <p id="restaurant-address" aria-label="Address of the restaurant"></p>
-            <div id="map-container" role="application">
-                <div id="map" aria-label="Google map application"></div>
-                <table id="restaurant-hours" aria-label="hours restaurant"></table>
-            </div>
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container">
+      <h1 id="restaurant-name"></h1>
+      <img id="restaurant-img" alt="Image of restaurant">
+      <p id="restaurant-cuisine"></p>
+      <p id="restaurant-address" aria-labelledby="labelFor-restaurant-address"></p>
+      <label id="labelFor-restaurant-address">Restaurant Hours</label>
+      <div id="map-container" aria-labelledby="labelFor-map-application" role="application">
+        <div id="map"></div>
+        <label id="labelFor-map-application">"Google map application"s</label>
+      </div>
+      <table id="restaurant-hours" aria-labelledby="labelFor-restaurant-hours"></table>
+      <label id="labelFor-restaurant-hours">Restaurant Hours</label>
+    </section>
+    <!-- Beginning map -->
 
+    <!-- End map -->
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <section id="reviews-container">
+      <ul id="reviews-list" aria-label="List of reviews"></ul>
+    </section>
+    <!-- End reviews -->
+  </main>
+  <!-- End main -->
+  <!-- Beginning footer -->
+  <footer id="footer" aria-label="All Rights Reserved">
+    Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+  <!-- Beginning scripts -->
+  <!-- Database helpers -->
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
 
-        </section>
-        <!-- Beginning map -->
-
-        <!-- End map -->
-        <!-- end restaurant -->
-        <!-- Beginning reviews -->
-        <section id="reviews-container">
-            <ul id="reviews-list" aria-label="List of reviews"></ul>
-        </section>
-        <!-- End reviews -->
-    </main>
-    <!-- End main -->
-    <!-- Beginning footer -->
-    <footer id="footer">
-        Copyright (c) 2018   <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-    </footer>
-    <!-- End footer -->
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
-    <!-- Beginning scripts -->
-    <!-- Database helpers -->
-    <script type="text/javascript" src="js/dbhelper.js"></script>
-    <!-- Main javascript file -->
-    <script type="text/javascript" src="js/restaurant_info.js"></script>
-
-    <!--<script src="register.js"></script>>
-    <script src="sw.js/index.js"></script>-->
-    <!-- Google Maps -->
-    <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
-    <!-- End scripts -->
+  <!-- Google Maps -->
+  <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script> -->
+  <!-- End scripts -->
 
 </body>
 
