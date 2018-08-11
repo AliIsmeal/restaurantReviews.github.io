@@ -6,7 +6,7 @@
 var staticCacheName = "RestaurentRewies-static-v1";
 
 self.addEventListener("install", event => {
-  console.log(event);
+
   event.waitUntil(
     caches.open(staticCacheName).then(cache => {
       return cache
@@ -40,7 +40,7 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-  console.log("im activate");
+
   event.waitUntil(
     caches.keys().then(cacheNames =>
       Promise.all(
@@ -55,12 +55,12 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
-  console.log("im fetch");
+
   let cacheRequest = event.request;
   let cacheUrl = new URL(event.request.url);
 
   event.respondWith(
-    caches.match(cacheRequest).then(function(response) {
+    caches.match(cacheRequest).then(response => {
       return (
         response ||
         fetch(event.request)
