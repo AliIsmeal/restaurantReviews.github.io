@@ -1,4 +1,3 @@
-
 // resources:https://developers.google.com/web/fundamentals/primers/service-workers/
 
 // Regiter serviceWorker
