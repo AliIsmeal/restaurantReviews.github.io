@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
 body,
 td,
 th,
@@ -377,6 +376,10 @@ nav h1 a {
   margin: 0 0 10px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 203fbbe81de0a51e3714123f78ba6ed779502ea5
 #restaurant-hours td {
   color: #666;
 }
